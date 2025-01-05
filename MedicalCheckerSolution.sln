@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalChecker.Api", "MedicalChecker\MedicalChecker.Api.csproj", "{B8B52BCD-54B3-40A9-9CAA-30228A43A328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalChecker.Core", "MedicalChecker.Core\MedicalChecker.Core.csproj", "{720077D5-E8F5-405C-A5E3-C60CB83103A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalChecker.Services", "MedicalChecker.Services\MedicalChecker.Services.csproj", "{AFFE1B70-FF4D-43A2-A077-E814B5FEF3EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalChecker.Data", "MedicalChecker.Data\MedicalChecker.Data.csproj", "{C6A4BC54-2281-43CC-ACED-4284B7612FE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalChecker.Infrastructure", "MedicalChecker.Infrastructure\MedicalChecker.Infrastructure.csproj", "{283FB4A6-23C4-4ECD-BE6F-EAC7AB4D329F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalChecker.Utility", "MedicalChecker.Utility\MedicalChecker.Utility.csproj", "{E76CCF2E-0CED-4B8A-8389-F18AFAE938D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8B52BCD-54B3-40A9-9CAA-30228A43A328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B52BCD-54B3-40A9-9CAA-30228A43A328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B52BCD-54B3-40A9-9CAA-30228A43A328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B52BCD-54B3-40A9-9CAA-30228A43A328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720077D5-E8F5-405C-A5E3-C60CB83103A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720077D5-E8F5-405C-A5E3-C60CB83103A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720077D5-E8F5-405C-A5E3-C60CB83103A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720077D5-E8F5-405C-A5E3-C60CB83103A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFFE1B70-FF4D-43A2-A077-E814B5FEF3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFE1B70-FF4D-43A2-A077-E814B5FEF3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFE1B70-FF4D-43A2-A077-E814B5FEF3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFE1B70-FF4D-43A2-A077-E814B5FEF3EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A4BC54-2281-43CC-ACED-4284B7612FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A4BC54-2281-43CC-ACED-4284B7612FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A4BC54-2281-43CC-ACED-4284B7612FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A4BC54-2281-43CC-ACED-4284B7612FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{283FB4A6-23C4-4ECD-BE6F-EAC7AB4D329F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{283FB4A6-23C4-4ECD-BE6F-EAC7AB4D329F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{283FB4A6-23C4-4ECD-BE6F-EAC7AB4D329F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{283FB4A6-23C4-4ECD-BE6F-EAC7AB4D329F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E76CCF2E-0CED-4B8A-8389-F18AFAE938D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E76CCF2E-0CED-4B8A-8389-F18AFAE938D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E76CCF2E-0CED-4B8A-8389-F18AFAE938D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E76CCF2E-0CED-4B8A-8389-F18AFAE938D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
