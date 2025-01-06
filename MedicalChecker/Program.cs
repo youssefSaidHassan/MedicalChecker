@@ -1,6 +1,7 @@
 using MedicalChecker.Core;
 using MedicalChecker.Infrastructure;
 using MedicalChecker.Services;
+using Serilog;
 namespace MedicalChecker
 {
     public class Program
@@ -23,6 +24,10 @@ namespace MedicalChecker
                 .AddCoreDependencies()
                 .AddServiceDependencies();
             #endregion
+
+            Log.Logger = new LoggerConfiguration()
+                        .ReadFrom.Configuration(builder.Configuration).CreateLogger();
+            builder.Services.AddSerilog();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -31,7 +36,7 @@ namespace MedicalChecker
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseMiddleware<ErrorHandlerMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
