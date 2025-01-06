@@ -1,5 +1,5 @@
 ﻿using MedicalChecker.Data.Entities.Identity;
-using MedicalChecker.Utility.Enums;
+using MedicalChecker.Utility.Helper.Enums;
 
 namespace MedicalChecker.Data.Entities
 {
