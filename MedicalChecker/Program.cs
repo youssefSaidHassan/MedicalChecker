@@ -1,4 +1,6 @@
-
+using MedicalChecker.Core;
+using MedicalChecker.Infrastructure;
+using MedicalChecker.Services;
 namespace MedicalChecker
 {
     public class Program
@@ -14,6 +16,13 @@ namespace MedicalChecker
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            #region Dependacy Injection
+            builder.Services
+                .AddServiceRegistration(builder.Configuration)
+                .AddInfrastructureDependencies()
+                .AddCoreDependencies()
+                .AddServiceDependencies();
+            #endregion
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

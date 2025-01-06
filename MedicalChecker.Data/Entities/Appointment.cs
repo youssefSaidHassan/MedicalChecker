@@ -3,12 +3,14 @@ using MedicalChecker.Utility.Enums;
 
 namespace MedicalChecker.Data.Entities
 {
-    public class Request
+    public class Appointment
     {
         public int Id { get; set; }
-        public RequestStatusEnum Status { get; set; }
-        public string FileName { get; set; }
+        public AppointmentStatusEnum Status { get; set; }
+        public DateTime Date { get; set; }
         public string UserId { get; set; }
+        public int DoctorId { get; set; }
         public ApplicationUser User { get; set; }
+        public Doctor Doctor { get; set; }
     }
 }
