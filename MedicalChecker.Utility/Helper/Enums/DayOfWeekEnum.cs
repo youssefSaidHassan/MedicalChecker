@@ -1,4 +1,4 @@
-﻿namespace MedicalChecker.Utility.Enums
+﻿namespace MedicalChecker.Utility.Helper.Enums
 {
     public enum DayOfWeekEnum
     {

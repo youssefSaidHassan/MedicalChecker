@@ -1,5 +1,5 @@
 ﻿using MedicalChecker.Data.Entities;
-using MedicalChecker.Utility.Enums;
+using MedicalChecker.Utility.Helper.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
