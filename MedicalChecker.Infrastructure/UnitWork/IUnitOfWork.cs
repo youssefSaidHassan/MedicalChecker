@@ -1,4 +1,5 @@
 ﻿using MedicalChecker.Infrastructure.Interfaces;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace MedicalChecker.Infrastructure.UnitWork
 {
@@ -14,5 +15,9 @@ namespace MedicalChecker.Infrastructure.UnitWork
         IPrecautionsRepository Precautions { get; }
         IRequestRepository Request { get; }
         ISocialLinksRepository SocialLinks { get; }
+        IApplicationUserRepository ApplicationUser { get; }
+        IDbContextTransaction BeginTransaction();
+        Task Commit();
+        Task RollBack();
     }
 }

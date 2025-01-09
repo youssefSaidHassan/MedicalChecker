@@ -1,4 +1,5 @@
 ﻿using MedicalChecker.Data.Entities;
+using MedicalChecker.Data.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -22,6 +23,7 @@ namespace MedicalChecker.Infrastructure.Context
             base.OnModelCreating(builder);
         }
 
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Doctor> Doctors { get; set; }

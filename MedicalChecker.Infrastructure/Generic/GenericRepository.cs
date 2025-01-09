@@ -1,6 +1,5 @@
 ﻿using MedicalChecker.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace MedicalChecker.Infrastructure.Generic
 {
@@ -32,15 +31,6 @@ namespace MedicalChecker.Infrastructure.Generic
             await _context.SaveChangesAsync();
         }
 
-        public IDbContextTransaction BeginTransaction()
-        {
-            return _context.Database.BeginTransaction();
-        }
-
-        public async Task Commit()
-        {
-            await _context.Database.CommitTransactionAsync();
-        }
 
         public async Task DeleteAsync(T entity)
         {
@@ -72,10 +62,6 @@ namespace MedicalChecker.Infrastructure.Generic
             return _context.Set<T>().AsNoTracking().AsQueryable();
         }
 
-        public async Task RollBack()
-        {
-            await _context.Database.RollbackTransactionAsync();
-        }
 
         public async Task UpdateAsync(T entity)
         {
