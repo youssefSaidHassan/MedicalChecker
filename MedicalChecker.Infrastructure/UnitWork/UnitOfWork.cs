@@ -1,9 +1,13 @@
-﻿using MedicalChecker.Infrastructure.Interfaces;
+﻿using MedicalChecker.Infrastructure.Context;
+using MedicalChecker.Infrastructure.Interfaces;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace MedicalChecker.Infrastructure.UnitWork
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private readonly ApplicationDbContext _context;
+
         public IAppointmentRepository Appointment { get; }
         public IAvailabilityRepository Availability { get; }
         public IDepartmentRepository Department { get; }
@@ -15,6 +19,8 @@ namespace MedicalChecker.Infrastructure.UnitWork
         public IRequestRepository Request { get; }
         public ISocialLinksRepository SocialLinks { get; }
 
+        public IApplicationUserRepository ApplicationUser { get; }
+
         public UnitOfWork(
          IAppointmentRepository appointmentRepository,
          IAvailabilityRepository availabilityRepository,
@@ -25,7 +31,9 @@ namespace MedicalChecker.Infrastructure.UnitWork
          IDrugRepository drugRepository,
          IPrecautionsRepository precautionsRepository,
          IRequestRepository requestRepository,
-         ISocialLinksRepository socialLinksRepository
+         ISocialLinksRepository socialLinksRepository,
+         IApplicationUserRepository applicationUser,
+         ApplicationDbContext context
          )
         {
             Appointment = appointmentRepository;
@@ -33,12 +41,28 @@ namespace MedicalChecker.Infrastructure.UnitWork
             Department = departmentRepository;
             Disease = diseaseRepository;
             SocialLinks = socialLinksRepository;
+            _context = context;
             Request = requestRepository;
             Drug = drugRepository;
             DiseasePrecaution = diseasePrecautionRepository;
             Doctor = doctorRepository;
             Precautions = precautionsRepository;
+            ApplicationUser = applicationUser;
 
+        }
+        public IDbContextTransaction BeginTransaction()
+        {
+            return _context.Database.BeginTransaction();
+        }
+
+        public async Task Commit()
+        {
+            await _context.Database.CommitTransactionAsync();
+        }
+
+        public async Task RollBack()
+        {
+            await _context.Database.RollbackTransactionAsync();
         }
 
 

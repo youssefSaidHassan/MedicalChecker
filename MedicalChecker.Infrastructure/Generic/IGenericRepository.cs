@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Storage;
-
-namespace MedicalChecker.Infrastructure.Generic
+﻿namespace MedicalChecker.Infrastructure.Generic
 {
     public interface IGenericRepository<T>
     {
@@ -13,8 +11,6 @@ namespace MedicalChecker.Infrastructure.Generic
         Task UpdateRangeAsync(ICollection<T> entities);
         Task DeleteAsync(T entity);
         Task DeleteRangeAsync(ICollection<T> entities);
-        IDbContextTransaction BeginTransaction();
-        Task Commit();
-        Task RollBack();
+
     }
 }

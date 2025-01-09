@@ -21,6 +21,7 @@ namespace MedicalChecker.Infrastructure
             services.AddScoped<IPrecautionsRepository, PrecautionsRepository>();
             services.AddScoped<IRequestRepository, RequestRepository>();
             services.AddScoped<ISocialLinksRepository, SocialLinksRepository>();
+            services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;

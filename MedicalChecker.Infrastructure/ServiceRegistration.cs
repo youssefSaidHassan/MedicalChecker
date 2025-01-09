@@ -1,5 +1,11 @@
-﻿using MedicalChecker.Infrastructure.Context;
+﻿using MedicalChecker.Data.Entities.Identity;
+using MedicalChecker.Infrastructure.Context;
+using MedicalChecker.Utility.Helper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -50,6 +56,30 @@ namespace MedicalChecker.Infrastructure
                 });
             });
             #endregion
+
+            #region Register Identity
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 1;
+                options.User.RequireUniqueEmail = true;
+                options.SignIn.RequireConfirmedEmail = true;
+            }).AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
+            #endregion
+
+            var emailSettings = new EmailSettings();
+            configuration.GetSection(nameof(emailSettings)).Bind(emailSettings);
+            services.AddSingleton(emailSettings);
+
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+            services.AddScoped<IUrlHelper>(provider =>
+            {
+                var actionContext = provider.GetRequiredService<IActionContextAccessor>().ActionContext;
+                return new UrlHelper(actionContext);
+            });
+            services.AddHttpContextAccessor();
             return services;
         }
     }

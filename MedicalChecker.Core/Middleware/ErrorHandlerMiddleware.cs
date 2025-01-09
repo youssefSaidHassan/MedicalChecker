@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
 
-namespace MedicalChecker.Core
+namespace MedicalChecker.Core.Middleware
 {
     public class ErrorHandlerMiddleware
     {
