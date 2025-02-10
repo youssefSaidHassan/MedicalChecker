@@ -25,6 +25,9 @@ namespace MedicalChecker.Infrastructure
             });
             #endregion
 
+
+
+
             #region Swagger
             services.AddSwaggerGen(c =>
             {

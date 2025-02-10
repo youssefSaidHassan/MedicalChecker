@@ -1,6 +1,8 @@
 using MedicalChecker.Core;
 using MedicalChecker.Core.Middleware;
 using MedicalChecker.Infrastructure;
+using MedicalChecker.Infrastructure.Context;
+using MedicalChecker.Infrastructure.Seeder;
 using MedicalChecker.Services;
 using Serilog;
 namespace MedicalChecker
@@ -30,6 +32,16 @@ namespace MedicalChecker
                         .ReadFrom.Configuration(builder.Configuration).CreateLogger();
             builder.Services.AddSerilog();
             var app = builder.Build();
+
+            #region Seeding Data
+            using (var scope = app.Services.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var env = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
+                DrugSeeder.Seed(context, env);
+            }
+            #endregion
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

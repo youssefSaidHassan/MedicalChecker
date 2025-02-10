@@ -25,8 +25,8 @@ namespace MedicalChecker.Core.Features.User.Command.Validations
         public void AppleyValidationRules()
         {
             RuleFor(x => x.UserId)
-                .NotEmpty().WithMessage("First Name Is Required")
-                .NotNull().WithMessage("First Name Can Not Be Null");
+                .NotEmpty().WithMessage("Request Id Is Required")
+                .NotNull().WithMessage("Request Id Can Not Be Empty");
 
         }
         public void AppleyCustomValidationRules()
