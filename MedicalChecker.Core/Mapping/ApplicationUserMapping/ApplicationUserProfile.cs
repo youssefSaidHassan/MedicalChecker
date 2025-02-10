@@ -10,6 +10,7 @@ namespace MedicalChecker.Core.Mapping.ApplicationUserMapping
             GetUserByIdQueryMapping();
             UpdateUserCommandMapping();
             GetAllUserQueryMapping();
+            GetUserRequestsQueryMapping();
         }
     }
 }

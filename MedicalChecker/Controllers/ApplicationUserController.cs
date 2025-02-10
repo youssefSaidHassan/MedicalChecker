@@ -19,6 +19,11 @@ namespace MedicalChecker.Api.Controllers
         {
             return NewResult(await _mediator.Send(new GetUserByIdQuery(userId)));
         }
+        [HttpGet(Router.ApplicationUser.GetUserRequests)]
+        public async Task<IActionResult> GetUserRequests([FromQuery] GetUserRequestsQuery query)
+        {
+            return NewResult(await _mediator.Send(query));
+        }
         [HttpGet(Router.ApplicationUser.Count)]
         public async Task<IActionResult> GetUsersCount()
         {

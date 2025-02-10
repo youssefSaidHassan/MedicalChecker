@@ -11,6 +11,8 @@ namespace MedicalChecker.Services
         {
             services.AddScoped<IApplicationUserService, ApplicationUserService>();
             services.AddScoped<IEmailSender, EmailSender>();
+            services.AddScoped<IFileService, FileService>();
+            services.AddScoped<IRequestService, RequestService>();
             return services;
         }
     }

@@ -24,4 +24,8 @@
     <ProjectReference Include="..\MedicalChecker.Services\MedicalChecker.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mapping\RequestMapping\Command\" />
+  </ItemGroup>
+
 </Project>
