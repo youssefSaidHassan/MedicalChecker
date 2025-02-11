@@ -30,7 +30,7 @@ namespace MedicalChecker.Core.Bases
                 StatusCode = HttpStatusCode.Created,
                 Succeeded = true,
                 Meta = Meta,
-                Message = "Object Created Successfully"
+                Message = "Created Successfully"
             };
         }
         public Response<T> Deleted<T>()
@@ -39,7 +39,7 @@ namespace MedicalChecker.Core.Bases
             {
                 StatusCode = HttpStatusCode.OK,
                 Succeeded = true,
-                Message = "Object Deleted Successfully"
+                Message = "Deleted Successfully"
             };
         }
 
@@ -49,7 +49,7 @@ namespace MedicalChecker.Core.Bases
             {
                 StatusCode = HttpStatusCode.OK,
                 Succeeded = true,
-                Message = "Object Updated Successfully"
+                Message = "Updated Successfully"
             };
         }
 

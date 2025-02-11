@@ -2,7 +2,7 @@
 using MedicalChecker.Core.Bases;
 using MedicalChecker.Utility.Helper.Enums;
 
-namespace MedicalChecker.Core.Features.Request.Query.Responses
+namespace MedicalChecker.Core.Features.Request.Query.Models
 {
     public class GetRequestsCountQuery : IRequest<Response<int>>
     {

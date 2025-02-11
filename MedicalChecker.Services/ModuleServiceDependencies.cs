@@ -13,6 +13,7 @@ namespace MedicalChecker.Services
             services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IFileService, FileService>();
             services.AddScoped<IRequestService, RequestService>();
+            services.AddScoped<IDrugService, DrugService>();
             return services;
         }
     }
