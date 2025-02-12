@@ -42,6 +42,17 @@
             public const string Update = $"{Prefix}/Update";
 
         }
+        public static class Department
+        {
+            public const string Prefix = $"{rule}/Department";
+            public const string Create = $"{Prefix}/Create";
+            public const string GetAll = $"{Prefix}/GetAll";
+            public const string Count = $"{Prefix}/Count";
+            public const string GetById = $"{Prefix}/Get/{{id}}";
+            public const string Delete = $"{Prefix}/Delete/{{deptId}}";
+            public const string Update = $"{Prefix}/Update";
+
+        }
 
     }
 }
