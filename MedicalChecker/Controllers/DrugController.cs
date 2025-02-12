@@ -30,7 +30,7 @@ namespace MedicalChecker.Api.Controllers
             return NewResult(await _mediator.Send(command));
         }
         [HttpPut(Router.Drug.Update)]
-        public async Task<IActionResult> UpdateStatus([FromForm] UpdateDrugCommand command)
+        public async Task<IActionResult> Update([FromForm] UpdateDrugCommand command)
         {
             return NewResult(await _mediator.Send(command));
         }

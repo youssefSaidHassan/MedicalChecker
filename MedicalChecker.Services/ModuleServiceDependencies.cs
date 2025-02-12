@@ -14,6 +14,7 @@ namespace MedicalChecker.Services
             services.AddScoped<IFileService, FileService>();
             services.AddScoped<IRequestService, RequestService>();
             services.AddScoped<IDrugService, DrugService>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
             return services;
         }
     }

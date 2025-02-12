@@ -39,6 +39,7 @@ namespace MedicalChecker
                 var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 var env = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
                 DrugSeeder.Seed(context, env);
+                DepartmentSeeder.Seed(context, env);
             }
             #endregion
 
